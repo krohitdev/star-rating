@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Review Page</title>
+	<!-- BOOTSTRAP CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<!-- Font Awesome Icon Library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+		.labels{
+			text-align: right;
+		}
+		.fa-star{
+			font-size:24px;
+		}
+		.checked{
+			color: orange;
+		}
+		.card{
+			width: 60%;
+			margin: aut
+		}
+		.col-md-2, .col-md-10 {
+			margin-bottom: 10px;
+		}
+		.form-btns{
+			text-align:right;
+		}
+	</style>
+</head>
+<body>
+	<div class="card container">
+		<div class="card-header">
+			<center><h1>Write a Review</h1></center>
+		</div>
+  		<div class="card-body">
+			<form>
+				<div class="row ">
+					<div class="col-md-2 labels"><strong>Full Name :</strong></div>
+					<div class="col-md-10">
+						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Name">
+					</div>
+					<div class="col-md-2 labels"><strong>E-mail  :</strong></div>
+					<div class="col-md-10">
+						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email">
+					</div>
+					<div class="col-md-2 labels"><strong>Rating</strong></div>
+					<div class="col-md-10 rating">
+							<span class="fa fa-star" id="1"></span>
+							<span class="fa fa-star" id="2"></span>
+							<span class="fa fa-star" id="3"></span>
+							<span class="fa fa-star" id="4"></span>
+							<span class="fa fa-star" id="5"></span>
+					</div>
+					<div class="col-md-2 labels"><strong>Message :</strong></div>
+					<div class="col-md-10">
+						<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+					</div>
+					<div class="col-md-12 form-btns">
+						<input type="reset" value="Clear" class="btn btn-outline-secondary">
+						<input type="submit" value="Submit" class="btn btn-success">
+					</div>
+				</div>
+	    	</form>
+	  	</div>
+	</div>
+
+
+	<!-- BOOTSTRAP CSS -->
+	<!-- jQuery CDN -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+	<script type="text/javascript">
+		// Custom JavaScript
+		$(document).ready(function() {
+			$(".rating span").on('click',function(){
+				var ratingNum = $(this).attr('id');
+				for (i = 1; i <=5; i++) {
+				  $('#'+i).removeClass('checked');
+				}
+				
+				for (i = 1; i <=parseInt(ratingNum); i++) {
+				  $('#'+i).addClass('checked');
+				}
+			});
+		});
+	</script>
+</body>
+</html>
